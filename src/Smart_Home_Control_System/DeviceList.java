@@ -32,4 +32,12 @@ public abstract class DeviceList implements SmartDevice {
             device.turnOff();
         }
     }
+
+    public String getStatus(){
+        String status = name + " is \n";
+        for (SmartDevice device : devices){
+            status += device.getStatus() + "\n";
+        }
+        return status;
+    }
 }
